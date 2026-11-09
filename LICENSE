@@ -21,6 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
-Las letras (Poppins, en `fuentes/`) tienen su propia licencia, la SIL Open Font License 1.1, y los modelos de
-MediaPipe (de Google, en `modelos/`, se bajan al instalar) tienen la suya, la Apache 2.0: ver `fuentes/LICENCIA-Poppins.txt`
-y `modelos/AVISO.md`.
+Lo que no es de Kevin Remón tiene su propia licencia, con su aviso en `AVISOS.md`: parte del código de la bola de papel está
+adaptado de otro proyecto con licencia MIT, y dos letras (Ma Shan Zheng y Playfair Display) van dentro del paquete con la SIL Open
+Font License 1.1. Las demás letras se bajan de Google Fonts al sacar el vídeo, cada una con su licencia abierta.

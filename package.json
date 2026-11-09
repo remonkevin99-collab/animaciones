@@ -1,7 +1,7 @@
 {
   "name": "animaciones",
   "private": true,
-  "description": "10 estilos de animación en código, listos para Claude Code: la misma escena en holograma, neón, papel, isométrico, plano azul, cámara térmica, anime, Matrix, acuarela y plastilina.",
+  "description": "20 estilos de animación en código, listos para Claude Code: el gato que tira la taza en holograma, neón, papel, isométrico, plano azul, cámara térmica, anime, Matrix, acuarela y plastilina, y la bola de papel a la papelera en pixel art, bloques, pizarra, años 30, vidriera, tinta china, grabado japonés, cine mudo, cristal y cómic.",
   "license": "MIT",
   "scripts": {
     "studio": "remotion studio src/index.ts",

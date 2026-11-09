@@ -1,9 +1,10 @@
-# 10 estilos de animación para Claude Code
+# 20 estilos de animación para Claude Code
 
-**La misma escena, pintada de 10 maneras, con el código exacto de cada estilo.** Un gato mira la taza, te mira, la empuja… y la
-taza cae. Le pides un estilo a Claude y te sale igual que en el vídeo; le cuentas tu escena y te la pinta con esa misma piel.
+**Dos escenas, pintadas de 20 maneras, con el código exacto de cada estilo.** Un gato mira la taza, te mira, la empuja… y la
+taza cae. Un muñeco de bloques lanza una bola de papel a la papelera: falla 9 veces y la décima entra. Le pides un estilo a Claude
+y te sale igual que en el vídeo; le cuentas tu escena y te la pinta con esa misma piel.
 
-![Los 10 estilos](ejemplos/estilos.jpg)
+![Los 10 estilos del gato](ejemplos/estilos.jpg)
 
 - **Gratis** y de código abierto (MIT).
 - **Corre en tu computadora**, con Claude Code. Mac, Windows y Linux.
@@ -25,9 +26,12 @@ Hecho por **Kevin Remón** · Instagram [@kevin.rf99](https://www.instagram.com/
 
 ## Usarlo
 
-**El gato, en el estilo que quieras** (sale igual que en el vídeo, sin gastar casi nada):
+**El gato o la bola de papel, en el estilo que quieras** (sale igual que en el vídeo, sin gastar casi nada):
 ```
 /animaciones plano azul
+```
+```
+/animaciones cine mudo
 ```
 
 **Tu escena, en ese estilo:**
@@ -45,7 +49,7 @@ tus cosas con ella. Te enseña una foto primero y después el vídeo.
 «más brillo») hasta que te guste. Lo sencillo (un producto, un móvil, un logo, un gráfico) sale antes que un personaje que se
 mueve mucho.
 
-## Los 10 estilos
+## Parte 1 · El gato
 
 | | Estilo | Escribe | Cómo es |
 |---|---|---|---|
@@ -59,6 +63,27 @@ mueve mucho.
 | 8 | Matrix | `matrix` | La escena hecha de letras verdes en una pantalla vieja |
 | 9 | Acuarela | `acuarela` | Aguadas que se corren, lápiz suelto y papel con grano |
 | 10 | Plastilina | `plastilina` | Plastilina en 3D con huellas de dedo, luz de estudio y stop motion |
+
+## Parte 2 · La bola de papel
+
+Un muñeco de bloques, en su silla de oficina, lanza una bola de papel a la papelera. Cada estilo enseña un lanzamiento distinto
+(rebota en el borde, se queda corta, choca con la lámpara…) y el último entra. Puedes pedir cualquier lanzamiento en cualquier
+estilo.
+
+![Los 10 estilos de la bola de papel](ejemplos/estilos-2.jpg)
+
+| | Estilo | Escribe | Cómo es |
+|---|---|---|---|
+| 11 | Pixel art | `pixel-art` | Un juego de consola de 16 bits, con su marcador, sus globos y el «¡FALLO!» de recreativa |
+| 12 | Bloques de juguete | `bloques` | Piezas de juguete en 3D, como una foto macro de stop motion |
+| 13 | Pizarra de tiza | `pizarra` | Todo se dibuja solo en tiza, con la trayectoria en puntos y las notas del profe |
+| 14 | Años 30 | `anos-30` | Un dibujo animado en blanco y negro, con brazos de manguera y película vieja |
+| 15 | Vidriera | `vidriera` | La escena hecha vidrio de colores y plomo, con el sol detrás |
+| 16 | Tinta china | `tinta-china` | Pincel y aguada sobre papel de arroz, con su sello rojo |
+| 17 | Grabado japonés | `grabado-japones` | Una estampa de madera de Edo, con el Fuji en la ventana y olas de espuma |
+| 18 | Cine mudo | `cine-mudo` | Una comedia de los años 20: grano, rayas, rótulo y el iris que se cierra |
+| 19 | Cristal | `cristal` | Todo de vidrio tallado en 3D, en un estudio negro con suelo de espejo |
+| 20 | Cómic | `comic` | Una viñeta de tebeo con trama de puntos, onomatopeyas y el «¡DENTRO!» que estalla |
 
 La piel de cada uno, explicada para Claude: `piel/`.
 
@@ -74,7 +99,7 @@ Haz esto en orden y dile a la persona cómo va.
    - Si ya existe, actualízala con `git pull` en vez de clonarla.
 2. **Node.js 18 o más nuevo:** `node --version`. Si no está, instálalo (Mac: `brew install node` o el instalador LTS de
    https://nodejs.org; Windows: `winget install OpenJS.NodeJS.LTS`).
-3. **Dentro de esa carpeta, `npm install`.** Para comprobarlo: `npx remotion compositions src/index.ts` tiene que listar los 10.
+3. **Dentro de esa carpeta, `npm install`.** Para comprobarlo: `npx remotion compositions src/index.ts` tiene que listar los 20.
 4. **Dile a la persona** que cierre Claude y lo vuelva a abrir: después ya puede escribir `/animaciones`.
 
 Cómo se usa después está en `SKILL.md`.
@@ -86,9 +111,13 @@ npm install
 npx remotion studio src/index.ts                                   # verlos en vivo
 npx remotion render src/index.ts plano-azul out/plano-azul.mp4     # sacar uno
 npx remotion render src/index.ts plastilina out/plastilina.mp4 --scale=2   # en 4K
+npx remotion render src/index.ts comic out/comic.mp4 --props='{"intento":3}'   # la bola, con otro lanzamiento (del 1 al 10)
 ```
 
 ## Licencias
 
 - **El código**: MIT, de Kevin Remón (`LICENSE`).
-- **Las letras** se cargan de Google Fonts al sacar el vídeo, cada una con su licencia abierta (SIL Open Font License).
+- **Parte del código de la bola de papel** está adaptado de otro proyecto con licencia MIT: su aviso y la lista de archivos, en
+  `AVISOS.md`.
+- **Las letras** se cargan de Google Fonts al sacar el vídeo, cada una con su licencia abierta (SIL Open Font License). Dos van
+  dentro del paquete, con su aviso en `AVISOS.md`.
