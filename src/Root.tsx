@@ -4,7 +4,8 @@ import {DUR} from './estilos/gato/escena';
 import {ESTILOS_GATO} from './estilos/gato/estilos';
 import {DUR as DUR_BOLA} from './estilos/bola/escena';
 import {ESTILOS as ESTILOS_BOLA} from './estilos/bola/estilos';
-import {ORDEN, ORDEN_BOLA, type IdEstilo, type IdEstiloBola} from './estilos/orden';
+import {ESTILOS as ESTILOS_PINTADOS} from './estilos/pintados/estilos';
+import {ORDEN, ORDEN_BOLA, ORDEN_PINTADOS, type IdEstilo, type IdEstiloBola, type IdEstiloPintado} from './estilos/orden';
 
 // Una composición por estilo, con el nombre que se escribe al pedirla: `npx remotion render src/index.ts plano-azul out/plano-azul.mp4`.
 // Todas en vertical, 1080 × 1920 y 60 cuadros por segundo. Cada estilo recibe solo el segundo en el que va (t) y pinta ese cuadro:
@@ -12,6 +13,7 @@ import {ORDEN, ORDEN_BOLA, type IdEstilo, type IdEstiloBola} from './estilos/ord
 //   · Del 1 al 10, el gato (./estilos/gato/escena.ts): 6 segundos.
 //   · Del 11 al 20, la bola de papel (./estilos/bola/escena.ts): el lanzamiento entero, 2 segundos. Con `intento` (del 1 al 10)
 //     se escoge cuál: `--props='{"intento":3}'`. Si no se dice, cada estilo sale con el suyo del vídeo.
+//   · Del 21 al 30, otra vez el gato (la misma escena), en otros 10 estilos (./estilos/pintados/): 6 segundos.
 
 const Estilo: React.FC<{estilo: IdEstilo}> = ({estilo}) => {
   const frame = useCurrentFrame();
@@ -39,6 +41,19 @@ const EstiloBola: React.FC<{estilo: IdEstiloBola; intento: number}> = ({estilo, 
   );
 };
 
+const PINTA_PINTADOS = Object.fromEntries(ESTILOS_PINTADOS.map((e) => [e.id, e.C]));
+
+const EstiloPintado: React.FC<{estilo: IdEstiloPintado}> = ({estilo}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const Pinta = PINTA_PINTADOS[estilo];
+  return (
+    <AbsoluteFill style={{background: '#000'}}>
+      <Pinta t={frame / fps} />
+    </AbsoluteFill>
+  );
+};
+
 export const Root: React.FC = () => (
   <>
     {ORDEN.map((e) => (
@@ -48,6 +63,10 @@ export const Root: React.FC = () => (
     {ORDEN_BOLA.map((e) => (
       <Composition key={e.id} id={e.composicion} component={EstiloBola} defaultProps={{estilo: e.id, intento: e.intento as number}}
         width={1080} height={1920} fps={60} durationInFrames={Math.round(DUR_BOLA * 60)} />
+    ))}
+    {ORDEN_PINTADOS.map((e) => (
+      <Composition key={e.id} id={e.composicion} component={EstiloPintado} defaultProps={{estilo: e.id}}
+        width={1080} height={1920} fps={60} durationInFrames={Math.round(DUR * 60)} />
     ))}
   </>
 );

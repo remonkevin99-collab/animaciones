@@ -1,16 +1,17 @@
 ---
 name: animaciones
-description: Anima una escena en uno de 20 estilos con su código exacto. Los 10 del gato que tira la taza (holograma, neón cyberpunk, papel recortado, isométrico, plano azul, cámara térmica, anime, Matrix, acuarela y plastilina) y los 10 de la bola de papel a la papelera (pixel art, bloques de juguete, pizarra de tiza, años 30, vidriera, tinta china, grabado japonés, cine mudo, cristal y cómic). Úsala cuando la persona escriba /animaciones, pida uno de estos estilos, quiera ver el gato o la bola de papel en un estilo o quiera pintar su propia escena (su producto, su mascota, su negocio) en uno de ellos.
+description: Anima una escena en uno de 30 estilos con su código exacto. Los 10 del gato que tira la taza (holograma, neón cyberpunk, papel recortado, isométrico, plano azul, cámara térmica, anime, Matrix, acuarela y plastilina), los 10 de la bola de papel a la papelera (pixel art, bloques de juguete, pizarra de tiza, años 30, vidriera, tinta china, grabado japonés, cine mudo, cristal y cómic) y otros 10 del gato (grafiti, hora dorada, pintura nocturna, pintura rupestre, película animada, videojuego retro, sombras chinescas, cera de colores, muñeco de lana y videovigilancia). Úsala cuando la persona escriba /animaciones, pida uno de estos estilos, quiera ver el gato o la bola de papel en un estilo o quiera pintar su propia escena (su producto, su mascota, su negocio) en uno de ellos.
 argument-hint: "[estilo] [tu escena]"
 ---
 
-# 20 estilos de animación
+# 30 estilos de animación
 
-Un proyecto de Remotion (React, SVG y canvas; los 3D, en Three.js) con 20 estilos en dos escenas:
+Un proyecto de Remotion (React, SVG y canvas; los 3D, en Three.js) con 30 estilos en dos escenas:
 
 - **Del 1 al 10, el gato:** mira la taza, te mira, la empuja y a los 2,7 s la taza cae y se rompe.
 - **Del 11 al 20, la bola de papel:** un muñeco de bloques, sentado en su silla de oficina, lanza una bola de papel a la papelera.
   Hay 10 lanzamientos: falla 9 (rebota en el borde, se queda corta, choca con la lámpara…) y el 10 entra.
+- **Del 21 al 30, el gato otra vez:** la misma escena del 1 al 10, en otros 10 estilos.
 
 Cada estilo es una **piel**: el papel, los colores, el trazo, las letras, los rótulos y cómo cuenta el golpe. El código de cada
 estilo es el exacto del vídeo, así que no hay que inventar nada: se copia la piel y se cambia lo que pasa.
@@ -25,7 +26,7 @@ estilo es el exacto del vídeo, así que no hay que inventar nada: se copia la p
 2. Si en `SKILL_DIR` no está `node_modules`, corre `npm install` ahí (unos 20 s).
 3. La primera vez que sacas un vídeo, Remotion baja su navegador (unos 100 MB) solo. Dile a la persona que espere.
 
-## Los 20 estilos
+## Los 30 estilos
 
 **Parte 1 · el gato** (6 s; la escena, en `src/estilos/gato/escena.ts`)
 
@@ -57,9 +58,27 @@ estilo es el exacto del vídeo, así que no hay que inventar nada: se copia la p
 | 19 | Cristal (3D) | `cristal` | `piel/cristal.md` | `src/estilos/bola/cristal/Cristal.tsx` (+ `CristalEstudio`, `CristalLuz`, `CristalMuneco`, `CristalPared`, `CristalPiezas`) |
 | 20 | Cómic | `comic` | `piel/comic.md` | `src/estilos/bola/comic/Comic.tsx` (+ `ComicTrama`, `ComicDecorado`, `ComicMuneco`, `ComicRotulos`) |
 
+**Parte 3 · el gato en 10 estilos más** (6 s, la misma escena del 1 al 10, `src/estilos/gato/escena.ts`; la lista, en
+`src/estilos/pintados/estilos.ts`)
+
+| Nº | Estilo | Para sacarlo | Su piel | Su código |
+|---|---|---|---|---|
+| 21 | Grafiti | `grafiti` | `piel/grafiti.md` | `src/estilos/pintados/grafiti/Grafiti.tsx` (+ `espray`, `pared`, `gato`, `taza`) |
+| 22 | Hora dorada | `hora-dorada` | `piel/hora-dorada.md` | `src/estilos/pintados/dorada/HoraDorada.tsx` (+ `pincel`, `cielo`, `paisaje`, `porche`, `gato`, `taza`, `luz`) |
+| 23 | Pintura nocturna | `nocturna` | `piel/nocturna.md` | `src/estilos/pintados/nocturna/PinturaNocturna.tsx` (+ `pincel`, `decorado`, `gato`) |
+| 24 | Pintura rupestre | `rupestre` | `piel/rupestre.md` | `src/estilos/pintados/rupestre/PinturaRupestre.tsx` (+ `roca`, `pigmento`, `antorcha`, `decorado`, `gato`, `vasija`) |
+| 25 | Película animada (3D) | `pelicula` | `piel/pelicula.md` | `src/estilos/pintados/pelicula/PeliculaAnimada.tsx` (+ `comun`, `materiales`, `cocina`, `gato`, `taza`, `luz`) |
+| 26 | Videojuego retro (3D) | `videojuego` | `piel/videojuego.md` | `src/estilos/pintados/videojuego/VideojuegoRetro.tsx` (+ `retro`, `camara`, `mundo`, `gato`, `taza`, `hud`) |
+| 27 | Sombras chinescas | `sombras` | `piel/sombras.md` | `src/estilos/pintados/sombras/SombrasChinescas.tsx` (+ `lienzos`, `luz`, `papel`, `teatro`, `decorado`, `gato`, `taza`) |
+| 28 | Cera de colores | `cera` | `piel/cera.md` | `src/estilos/pintados/cera/CeraDeColores.tsx` (+ `ceras`, `letras`, `decorado`, `gato`) |
+| 29 | Muñeco de lana (3D) | `lana` | `piel/lana.md` | `src/estilos/pintados/lana/MunecoDeLana.tsx` (+ `punto`, `tejido`, `decorado`, `gato`, `taza`) |
+| 30 | Videovigilancia | `vigilancia` | `piel/vigilancia.md` | `src/estilos/pintados/vigilancia/Videovigilancia.tsx` (+ `cocina`, `camara`, `gato`, `taza`, `rotulos`) |
+
 Lo que pasa en cada escena, sin estilo: `src/estilos/gato/escena.ts` y `src/estilos/bola/escena.ts`. Las ayudas de movimiento:
 `src/comun/curvas.ts`. Los nombres valen con tilde o sin ella y en mayúsculas o minúsculas («Neón» = `neon`, «Matrix» = `matrix`,
-«Años 30» = `anos-30`, «Grabado japonés» = `grabado-japones`, «Cómic» = `comic`).
+«Años 30» = `anos-30`, «Grabado japonés» = `grabado-japones`, «Cómic» = `comic`, «Hora dorada» = `hora-dorada`, «Pintura nocturna» =
+`nocturna`, «Pintura rupestre» = `rupestre`, «Película animada» = `pelicula`, «Videojuego retro» = `videojuego`, «Sombras chinescas» =
+`sombras`, «Cera de colores» = `cera`, «Muñeco de lana» = `lana`, «Videovigilancia» o «cámara de seguridad» = `vigilancia`).
 
 ## A · El gato en un estilo (`/animaciones plano azul`)
 
@@ -74,6 +93,9 @@ npx remotion render src/index.ts plano-azul "<su carpeta>/gato-plano-azul.mp4"
 - Para mirar un cuadro antes: `npx remotion still src/index.ts plano-azul "<su carpeta>/foto.png" --frame=190` (el golpe es
   hacia el cuadro 190).
 - Para verlo en vivo y tocarlo: `npx remotion studio src/index.ts`.
+- **Los del 21 al 30 son el mismo gato** y se sacan igual: `npx remotion render src/index.ts grafiti "<su carpeta>/gato-grafiti.mp4"`.
+  En el vídeo, cada uno se veía de 2,3 a 3,9 s (empuja la taza mirándote, cae y se rompe): para lo mismo, `--frames=138-233`. La
+  taza toca el suelo en el cuadro 186; para la foto con el golpe ya en el suelo, `--frame=192`.
 
 ## A · La bola de papel en un estilo (`/animaciones cine mudo`)
 
@@ -124,6 +146,10 @@ npx remotion render src/index.ts cine-mudo "<su carpeta>/bola-cine-mudo.mp4"
      materiales de la ficha).
    - Los imports: `../../comun/curvas`, `../formas` y `../camara3d` siguen valiendo (misma profundidad); las ayudas de geometría
      que el estilo tomaba de `./escena` del gato (`poli`, `curva`, `elipse`, `rot`, `suma`…) se importan de `../gato/escena`.
+   - **Si copia un estilo del 21 al 30** (cada uno vive en su carpeta: `src/estilos/pintados/grafiti/…`), copia la carpeta entera a
+     `src/estilos/<su-escena>/grafiti/`, a la misma profundidad: así `../../../comun/curvas` y `../../formas` siguen valiendo. Lo
+     que tomaba de `../../gato/escena` (el gato, la taza, `MESA_Y`, `BORDE`…) pasa a salir de su `escena.ts` (`../escena`); la
+     geometría pura (`rot`, `suma`, `poli`, `elipse`…) se puede seguir tomando de `../../gato/escena`.
    - **Si copia un estilo de la bola** (vive en su carpeta, un piso más abajo: `src/estilos/bola/cinemudo/…`), en su escena sus
      imports `../../../comun/curvas` pasan a `../../comun/curvas`, y lo que tomaba de `../escena` (`proyecta`, las medidas, el
      esqueleto del muñeco…) se importa de `../bola/escena` o se rehace en su `escena.ts`. Los bloques, que están en la raíz de
@@ -149,23 +175,29 @@ npx remotion render src/index.ts cine-mudo "<su carpeta>/bola-cine-mudo.mp4"
 6. **Los retoques, con sus palabras** («más lento», «el perro más grande», «más brillo»).
 
 Para ahorrar cuota: un estilo cada vez (si quiere varios, el segundo cuando el primero esté aprobado), no reescribas lo que ya
-funciona y no leas los 20 estilos para hacer uno.
+funciona y no leas los 30 estilos para hacer uno.
 
 ## Reglas
 
 - **El mismo segundo da siempre el mismo cuadro:** todo sale de `t`. Nada de `Math.random()`: `rng(semilla)` de `curvas.ts`.
 - **En vertical, 1080 × 1920.** Lo importante, entre x 60 y x 1020: al tocar un Reel, Instagram corta los lados.
-- **Los 3D (la plastilina, los bloques y el cristal) y los que pintan con WebGL (la tinta china y el cine mudo)** necesitan
-  `--gl=angle`, que ya va en `remotion.config.ts`.
+- **Los 3D (la plastilina, los bloques, el cristal, la película animada, el videojuego retro y el muñeco de lana) y los que pintan
+  con WebGL (la tinta china y el cine mudo)** necesitan `--gl=angle`, que ya va en `remotion.config.ts`.
 - **Las letras** vienen de Google Fonts: la primera vez hace falta internet. Dos van dentro: la del sello de la tinta china (en
-  `caligrafia.ts`) y la del rótulo del cine mudo (`public/fuentes/`).
+  `caligrafia.ts`) y la del rótulo del cine mudo (`public/fuentes/`). La letra de niño de la cera de colores no es una letra: se
+  dibuja con código (`cera/letras.ts`).
+- **Varios del 21 al 30 pintan en un `<canvas>` a 1080 × 1920** y lo estiran al cuadro: en 4K (`--scale=2`) la cera de colores, la
+  pintura rupestre, la hora dorada, las sombras chinescas y la videovigilancia salen algo más blandas, y el videojuego retro va a
+  media resolución a propósito (su ficha lo dice). Lo quieto (la pared, la roca, el cielo, las texturas de lana) se pinta una vez y
+  se guarda: el primer cuadro tarda más que los demás. La videovigilancia lo calcula todo en la CPU en cada cuadro: es la más lenta.
 - **Los archivos que lista `AVISOS.md`** están adaptados de código de otros con licencia MIT: si se copian, su aviso va con ellos.
 - Los ids de los filtros SVG tienen que ser únicos en la página: si se pintan dos estilos a la vez, cada uno con los suyos.
 
 ## Si algo falla
 
 - «Cannot find module»: falta `npm install` en esa carpeta.
-- La plastilina, los bloques, el cristal, la tinta china o el cine mudo salen negros o vacíos: que no falte
+- La plastilina, los bloques, el cristal, la película animada, el videojuego retro, el muñeco de lana, la tinta china o el cine
+  mudo salen negros o vacíos: que no falte
   `Config.setChromiumOpenGlRenderer('angle')` en `remotion.config.ts`.
 - El cine mudo se queda esperando la letra: falta `public/fuentes/PlayfairDisplay-Black.ttf` en esa carpeta.
 - Algo sale cortado en el neón o el holograma: sus filtros cubren una zona fija (lo dice su ficha); agrándala si lo nuevo se sale.

@@ -1,9 +1,10 @@
 # Avisos de licencias
 
-El código de este paquete es MIT (`LICENSE`). Pero hay dos cosas de otros, y sus licencias piden llevar su aviso en cada copia:
+El código de este paquete es MIT (`LICENSE`). Pero hay tres cosas de otros, y sus licencias piden llevar su aviso en cada copia:
 
 1. **Parte del código de la bola de papel** está adaptado de otro proyecto con licencia MIT.
 2. **Dos letras** van dentro del paquete, con su licencia SIL Open Font License 1.1.
+3. **El ruido de un sombreador de la película animada** sigue uno muy conocido, con licencia MIT.
 
 Las demás letras no van en el paquete: se bajan de Google Fonts al sacar el vídeo, cada una con su licencia abierta.
 
@@ -156,4 +157,33 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+```
+
+## 3 · El ruido de valor de Inigo Quilez (MIT)
+
+En `src/estilos/pintados/pelicula/materiales.ts`, el sombreador del pelo y de la madera usa un ruido de valor en 3D (`hashP` y
+`ruidoP`) que sigue el de Inigo Quilez, «Noise - value - 3D» (https://www.shadertoy.com/view/4sfGzS), pasado a esta escena. Su
+licencia:
+
+```text
+The MIT License
+Copyright © 2013 Inigo Quilez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```

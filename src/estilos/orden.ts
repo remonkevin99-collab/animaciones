@@ -1,6 +1,6 @@
-// LOS 20 ESTILOS, en el orden de los vídeos: del 1 al 10, el gato que tira la taza; del 11 al 20, la bola de papel.
-// `id` es el que usa el código (gato/estilos.ts y bola/estilos.ts); `composicion`, el nombre que se escribe para sacarlo en vídeo;
-// `nombre`, como se dice.
+// LOS 30 ESTILOS, en el orden de los vídeos: del 1 al 10, el gato que tira la taza; del 11 al 20, la bola de papel; del 21 al 30,
+// otra vez el gato, en otros 10 estilos. `id` es el que usa el código (gato/estilos.ts, bola/estilos.ts y pintados/estilos.ts);
+// `composicion`, el nombre que se escribe para sacarlo en vídeo; `nombre`, como se dice.
 export const ORDEN = [
   {id: 'holograma', composicion: 'holograma', nombre: 'Holograma'},
   {id: 'neon', composicion: 'neon', nombre: 'Neón cyberpunk'},
@@ -31,3 +31,18 @@ export const ORDEN_BOLA = [
   {id: 'comic', composicion: 'comic', nombre: 'Cómic', intento: 10},
 ] as const;
 export type IdEstiloBola = (typeof ORDEN_BOLA)[number]['id'];
+
+// El gato otra vez (la misma escena del 1 al 10), en otros 10 estilos: del 21 al 30, en el orden de pintados/estilos.ts. 6 segundos.
+export const ORDEN_PINTADOS = [
+  {id: 'grafiti', composicion: 'grafiti', nombre: 'Grafiti'},
+  {id: 'dorada', composicion: 'hora-dorada', nombre: 'Hora dorada'},
+  {id: 'nocturna', composicion: 'nocturna', nombre: 'Pintura nocturna'},
+  {id: 'rupestre', composicion: 'rupestre', nombre: 'Pintura rupestre'},
+  {id: 'pelicula', composicion: 'pelicula', nombre: 'Película animada'},
+  {id: 'videojuego', composicion: 'videojuego', nombre: 'Videojuego retro'},
+  {id: 'sombras', composicion: 'sombras', nombre: 'Sombras chinescas'},
+  {id: 'cera', composicion: 'cera', nombre: 'Cera de colores'},
+  {id: 'lana', composicion: 'lana', nombre: 'Muñeco de lana'},
+  {id: 'vigilancia', composicion: 'vigilancia', nombre: 'Videovigilancia'},
+] as const;
+export type IdEstiloPintado = (typeof ORDEN_PINTADOS)[number]['id'];

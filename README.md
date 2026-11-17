@@ -1,8 +1,8 @@
-# 20 estilos de animación para Claude Code
+# 30 estilos de animación para Claude Code
 
-**Dos escenas, pintadas de 20 maneras, con el código exacto de cada estilo.** Un gato mira la taza, te mira, la empuja… y la
-taza cae. Un muñeco de bloques lanza una bola de papel a la papelera: falla 9 veces y la décima entra. Le pides un estilo a Claude
-y te sale igual que en el vídeo; le cuentas tu escena y te la pinta con esa misma piel.
+**Dos escenas, pintadas de 30 maneras, con el código exacto de cada estilo.** Un gato mira la taza, te mira, la empuja… y la
+taza cae (en 20 estilos). Un muñeco de bloques lanza una bola de papel a la papelera: falla 9 veces y la décima entra (en 10). Le
+pides un estilo a Claude y te sale igual que en el vídeo; le cuentas tu escena y te la pinta con esa misma piel.
 
 ![Los 10 estilos del gato](ejemplos/estilos.jpg)
 
@@ -32,6 +32,9 @@ Hecho por **Kevin Remón** · Instagram [@kevin.rf99](https://www.instagram.com/
 ```
 ```
 /animaciones cine mudo
+```
+```
+/animaciones hora dorada
 ```
 
 **Tu escena, en ese estilo:**
@@ -85,6 +88,25 @@ estilo.
 | 19 | Cristal | `cristal` | Todo de vidrio tallado en 3D, en un estudio negro con suelo de espejo |
 | 20 | Cómic | `comic` | Una viñeta de tebeo con trama de puntos, onomatopeyas y el «¡DENTRO!» que estalla |
 
+## Parte 3 · El gato en 10 estilos más
+
+El mismo gato que tira la taza, en otros 10 estilos: de una pared de la calle a la cámara de seguridad de casa.
+
+![El gato en 10 estilos más](ejemplos/estilos-3.jpg)
+
+| | Estilo | Escribe | Cómo es |
+|---|---|---|---|
+| 21 | Grafiti | `grafiti` | Pintado con espray en una pared de ladrillo, con su niebla de pintura, sus chorretones y un «¡CRASH!» de colores |
+| 22 | Hora dorada | `hora-dorada` | Un óleo del atardecer: el sol justo detrás de la taza, todo a contraluz con un filo de luz dorada |
+| 23 | Pintura nocturna | `nocturna` | Una noche de nieve pintada a la gouache, con la luz fría de la luna y la cálida de las velas |
+| 24 | Pintura rupestre | `rupestre` | Pintado en la pared de una cueva con ocre y carbón, alumbrado por una antorcha |
+| 25 | Película animada | `pelicula` | Un fotograma de película de animación en 3D: un gatito de ojos enormes, el sol de la tarde por la ventana y el fondo desenfocado |
+| 26 | Videojuego retro | `videojuego` | Un juego 3D de las primeras consolas: pocas caras, texturas pixeladas, la cámara de tercera persona y el marcador encima |
+| 27 | Sombras chinescas | `sombras` | Un teatrillo de sombras: marionetas de cartón con sus varillas detrás de una pantalla de papel alumbrada por un candil |
+| 28 | Cera de colores | `cera` | El dibujo de un niño con ceras: rellenos que se salen de la raya, el papel que asoma y todo temblando |
+| 29 | Muñeco de lana | `lana` | Stop motion de muñecos de ganchillo en 3D: el gato, la taza y el cuarto, todo tejido, como una foto de un plató en miniatura |
+| 30 | Videovigilancia | `vigilancia` | El gato pillado de noche por la cámara de seguridad: visión nocturna, ojos que brillan, ruido y los rótulos de la cámara |
+
 La piel de cada uno, explicada para Claude: `piel/`.
 
 ## Para Claude: cómo se instala
@@ -99,7 +121,7 @@ Haz esto en orden y dile a la persona cómo va.
    - Si ya existe, actualízala con `git pull` en vez de clonarla.
 2. **Node.js 18 o más nuevo:** `node --version`. Si no está, instálalo (Mac: `brew install node` o el instalador LTS de
    https://nodejs.org; Windows: `winget install OpenJS.NodeJS.LTS`).
-3. **Dentro de esa carpeta, `npm install`.** Para comprobarlo: `npx remotion compositions src/index.ts` tiene que listar los 20.
+3. **Dentro de esa carpeta, `npm install`.** Para comprobarlo: `npx remotion compositions src/index.ts` tiene que listar los 30.
 4. **Dile a la persona** que cierre Claude y lo vuelva a abrir: después ya puede escribir `/animaciones`.
 
 Cómo se usa después está en `SKILL.md`.
@@ -112,12 +134,13 @@ npx remotion studio src/index.ts                                   # verlos en v
 npx remotion render src/index.ts plano-azul out/plano-azul.mp4     # sacar uno
 npx remotion render src/index.ts plastilina out/plastilina.mp4 --scale=2   # en 4K
 npx remotion render src/index.ts comic out/comic.mp4 --props='{"intento":3}'   # la bola, con otro lanzamiento (del 1 al 10)
+npx remotion render src/index.ts grafiti out/grafiti.mp4 --frames=138-233     # el gato en grafiti, solo el momento (2,3 a 3,9 s)
 ```
 
 ## Licencias
 
 - **El código**: MIT, de Kevin Remón (`LICENSE`).
 - **Parte del código de la bola de papel** está adaptado de otro proyecto con licencia MIT: su aviso y la lista de archivos, en
-  `AVISOS.md`.
+  `AVISOS.md`. Y el ruido de un sombreador de la película animada sigue uno con licencia MIT: su aviso, también ahí.
 - **Las letras** se cargan de Google Fonts al sacar el vídeo, cada una con su licencia abierta (SIL Open Font License). Dos van
   dentro del paquete, con su aviso en `AVISOS.md`.
